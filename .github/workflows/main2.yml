@@ -35,6 +35,7 @@ jobs:
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }} # To be stored in GitHub Secrets.
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }} # To be stored in GitHub Secrets.
         break_build: false
+        incremental: true
         scanners: sast
         bug_tracker: Sarif
         params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --cx-flow.filterSeverity --cx-flow.filterCategory --logging.level.org.springframework.web.client.RestTemplate=TRACE --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE --checkmarx.disable-clubbing=true
