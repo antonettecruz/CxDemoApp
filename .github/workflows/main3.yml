@@ -31,7 +31,7 @@ jobs:
         with:
           project_name: <Test_Github_Action>
           cx_tenant: <nfr_netrustph>
-          base_uri: <eu.iam.checkmarx.net> 
+          base_uri: <eu.ast.checkmarx.net> 
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
         break_build: false
