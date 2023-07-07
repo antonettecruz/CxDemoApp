@@ -34,6 +34,10 @@ jobs:
           base_uri: ${{ secrets.CHECKMARX_URL }} 
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
+          break_build: false
+          scanners: sast
+          bug_tracker: Sarif
+          params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --cx-flow.filterSeverity --cx-flow.filterCategory --report-format sarif --output-path ..  --checkmarx.disable-clubbing=true
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with: 
