@@ -30,11 +30,11 @@ jobs:
       - name: Checkmarx AST Github Action
         uses: Checkmarx/ast-github-action@2.0.18
         with:
-          project_name: ${{ secrets.CHECKMARX_PROJECT }}
-          cx_tenant: ${{ secrets.CHECKMARX_TENANT }}
-          base_uri: ${{ secrets.CHECKMARX_URL }} 
-          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
-          cx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
+          project_name: ${{ secrets.CX_PROJECTNAME }}
+          cx_tenant: ${{ secrets.CX_TENANT }}
+          base_uri: ${{ secrets.CX_BASEURI }} 
+          cx_client_id: ${{ secrets.CXCLIENT_ID }}
+          cx_client_secret: ${{ secrets.CXCLIENT_SECRETS }}
           break_build: false
           scanners: sast
           bug_tracker: Sarif
