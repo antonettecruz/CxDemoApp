@@ -35,7 +35,7 @@ jobs:
           base_uri: ${{ secrets.CX_BASEURI }} 
           cx_client_id: ${{ secrets.CXCLIENT_ID }}
           cx_client_secret: ${{ secrets.CXCLIENT_SECRETS }}
-          break_build: false
+          break_build: true
           scanners: sast
           bug_tracker: Sarif
           params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --cx-flow.filterSeverity --cx-flow.filterCategory --report-format sarif --output-path . cx_result.sarif  --checkmarx.disable-clubbing=true
